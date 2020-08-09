@@ -2,14 +2,9 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const { generateJWT } = require('../helpers/jwt');
+const handlerError = require('../helpers/errorBD');
 
-const handlerError = (res, error) => {
-    console.log(error);
-    return res.status(500).json({
-        ok: false,
-        msg: 'Fatal error on server'
-    });
-}
+
 
 const createUser = async (req, res) => {
     const { name, email, password } = req.body;
