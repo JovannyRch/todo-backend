@@ -9,7 +9,7 @@ const jwtValidator = (req, res, next) => {
     if (!token) {
         return res.status(401).json({
             ok: false,
-            msg: 'No hay token en la petición'
+            msg: 'No token found in header'
         });
     }
 
@@ -27,7 +27,7 @@ const jwtValidator = (req, res, next) => {
     } catch (error) {
         return res.status(401).json({
             ok: false,
-            msg: 'Token no válido'
+            msg: 'Ivalid token'
         });
     }
 

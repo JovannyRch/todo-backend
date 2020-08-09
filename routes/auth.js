@@ -10,7 +10,7 @@ const router = Router();
 
 const { check } = require('express-validator');
 const { fieldValidator } = require('../middlewares/fieldValidators');
-const jwtValidator = require('../middlewares/jwt-validator');
+const { jwtValidator } = require('../middlewares/jwt-validator');
 
 
 const commonChecks = [
@@ -40,6 +40,8 @@ router.post(
 
 router.get(
     '/renew',
+    jwtValidator,
+    renewToken
 );
 
 

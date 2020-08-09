@@ -13,9 +13,8 @@ const dbConnection = async () => {
 
 
     } catch (error) {
-        console.log("Error en la BD");
         console.log(error);
-        throw new Error('Error a la hora de inicializar BD');
+        throw new Error('Fatal error mouting DB');
     }
 
 
